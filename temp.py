@@ -13,7 +13,6 @@ df = pd.read_csv(input_filename, usecols=['Cycle','Status', 'Voltage(V)', 'CapaC
 #filters data for microvoltages that are either higher or lower than previous data, useful for differential plots
 def filter(df):
   temp = df['Voltage(V)'][0]
-
   for index, item in df['Voltage(V)'].iteritems():
     if df['Status'][index] == 'CC_DChg':
       if item > temp or item == temp:
