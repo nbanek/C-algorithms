@@ -39,11 +39,11 @@ def transpose(df):
     df['{} D_Capacity(mAh)'.format(i)] = df[(df['Status'] == 'CC_DChg') & (df['Cycle'] == i)]['CapaCity(mAh)']
     df['{} C_Voltage(V)'.format(i)] = df[(df['Status'] == 'CC_Chg') & (df['Cycle'] == i)]['Voltage(V)']
     df['{} C_Capacity(mAh)'.format(i)] = df[(df['Status'] == 'CC_Chg') & (df['Cycle'] == i)]['CapaCity(mAh)']
-
   return df
 
 df = transpose(df).apply(lambda x: x.dropna().reset_index(drop = True))
 
 output_filename = input('What would you like your new file to be called? (include .csv extension)')
+
 #writes output file to working directory
 df.to_csv(output_filename, index = False)
