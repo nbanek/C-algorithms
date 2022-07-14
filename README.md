@@ -1,2 +1,2 @@
 # C-algorithms
-Various C++ algorithms I made for later reference
+Various C++ algorithms for later reference
